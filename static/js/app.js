@@ -1,6 +1,6 @@
 function getName() {
     var dropdownMenu = d3.select('#selDataset');    // menu id var assign
-    d3.json("./samples.json")
+    d3.json('data/samples.json')
         .then(subject => subject.names  //read names from json
             .forEach(name => dropdownMenu
                 .append('option')
@@ -24,7 +24,7 @@ function optionChanged(id) {
 
 // get dem info data
 function getMetadata(id) {
-    d3.json("./samples.json")
+    d3.json('data/samples.json')
         .then(data => {
             var subjectData = data.metadata
                 .filter(subject => subject.id.toString() === id)[0];
@@ -45,7 +45,7 @@ getName();
 
 // Bar chart
 function getBar(id) {
-    d3.json("./samples.json")
+    d3.json('data/samples.json')
         .then(data => {
             var sortedSample = data.samples
                 .filter(sample => sample.id === id)[0];
@@ -124,7 +124,7 @@ function getBar(id) {
 
 // Bubble chart
 function getBubble(id) {
-    d3.json("./samples.json")
+    d3.json('data/samples.json')
         .then(data => {
             var sortedSample = data.samples
                 .filter(sample => sample.id === id)[0];

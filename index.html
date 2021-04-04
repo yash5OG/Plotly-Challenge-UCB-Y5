@@ -7,40 +7,72 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Bellybutton Biodiversity</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
   <div class="container">
     <div class="row">
-      <div class="col-md-12 jumbotron text-center">
+      <div class="col-md-12 jumbotron">
         <h1>Belly Button Biodiversity Dashboard</h1>
         <p>Use the interactive charts below to explore the dataset</p>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-2">
-        <div class="well">
-          <h5>Test Subject ID No.:</h5>
-          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+      <h2 class="title display-5">Project Summary</h2>
+      <hr>
+      <div class="col-md-6">
+        <div class="single-post-content-wrapper p-3">
+          <p class="about"> 
+            <br>
+          This project explores the <a class="link" href="http://robdunnlab.com/projects/belly-button-biodiversity/" target="_blank">Belly Button Biodiversity Dataset</a>, which catalogs the
+          microbes that colonize human navels. The dataset reveals that a small handful of microbial species (also called
+          operational taxonomic units, or OTUs, in the study) were present in more than 70% of people, while the rest were
+          relatively rare.
+          <br>
+          <br>
+          "The belly button is one of the habitats closest to us, and yet it remains relatively unexplored. In January 2011, we launched Belly Button Biodiversity to investigate the microbes inhabiting our navels and the factors that might influence the microscopic life calling this protected, moist patch of skin home. In addition to inspiring scientific curiosity, Belly Button Biodiversity inspired conversations about the beneficial roles microbes play in our daily lives."
+          <br>
+          <br>
+          Use the interactive charts below to explore the dataset. Select a test subject ID number in a dropdown menu to see the
+          relative sample results.
+          <br>
+          <br>
+          Source:<a class="link" href="http://robdunnlab.com/projects/belly-button-biodiversity/" target="_blank">The Public Science
+            Lab</a>
+          </p>
         </div>
-        <div class="panel panel-primary">
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+      <h2 class="title display-5">Dashboard</h2>
+      <hr>
+      <div class="col-md-2 dashboardrow1">
+        <div class="well menustyle">
+          <h6 class="menutitle">Test Subject ID</h6>
+          <select id="selDataset" onchange="optionChanged(this.value)" class="dropdown"></select>
+        </div>
+        <div class="panel panel-primary panelstyle">
           <div class="panel-heading">
-            <h3 class="panel-title">Demographic Info</h3>
+            <h5 class="panel-title">Demographic Info</h5>
           </div>
           <div id="sample-metadata" class="panel-body"></div>
         </div>
       </div>
-      <div class="col-md-5">
-        <div id="bar"></div>
-      </div>
-      <div class="col-md-5">
-        <div id="gauge"></div>
+      <div class="col-md-10 dashboardrow1">
+        <div id="bubble" class="chartbox"></div>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-12">
-        <div id="bubble"></div>
+      <div class="col-md-7 dashboardrow2">
+        <div id="bar" class="chartbox"></div>
+      </div>
+      <div class="col-md-5 dashboardrow2">
+        <br>
+        <div id="gauge" class="gaugebox"></div>
       </div>
     </div>
   </div>
